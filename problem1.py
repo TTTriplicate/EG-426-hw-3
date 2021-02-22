@@ -4,7 +4,7 @@ import math as m
 def ccwRot(deg):
     rads = m.radians(deg)
     M = [[round(m.cos(rads), 4), round(-m.sin(rads), 4), 0],
-     [fourPlaces(m.sin(rads)), fourPlaces(m.cos(rads)), 0], 
+     [round(m.sin(rads), 4), round(m.cos(rads), 4), 0], 
      [0, 0, 1]]
     return M
 
@@ -15,5 +15,8 @@ def cwRot(deg):
 
 def solve():
     angle = 45
-    print(ccwRot(angle))
-    print(cwRot(angle))
+    for row in ccwRot(angle):
+        print(row)
+    print()
+    for row in cwRot(angle):
+        print(row)

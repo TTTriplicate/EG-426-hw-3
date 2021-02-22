@@ -8,3 +8,4 @@ problems = [p1.solve, p2.solve]
 
 for p in problems:
     p()
+    print()
