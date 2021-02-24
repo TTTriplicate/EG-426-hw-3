@@ -16,6 +16,7 @@ def pointInBaseFrame(trans, point):
 
 def pointInRobotFrame(trans, point):
     rev = lin.inv(trans)
+    print(rev)
     rebasedPoint = pointInBaseFrame(rev, point)
     
 def solve():
