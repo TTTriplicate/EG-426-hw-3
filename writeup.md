@@ -21,7 +21,7 @@ This matrix is orthogonal; this can be demonstrated by the fact that any single 
 $$
 \begin{bmatrix}\cos\alpha & \sin \alpha & 0\end{bmatrix} \cdot\begin{bmatrix}-\sin\alpha \\ \cos \alpha \\0\end{bmatrix} = ((\cos\alpha * -\sin\alpha) + (\sin\alpha * \cos\alpha) + 0) \sim 0\\
 $$
-Since the matrix is orthogonal, its inverse is simple its transpose:
+Since the matrix is orthogonal, its inverse is simply its transpose:
 $$
 \begin{bmatrix}
 \cos\alpha &\sin\alpha & 0\\
@@ -63,7 +63,7 @@ Which tells us that our identified object is at coordinates (6.598, -3.232) in t
 
 ### d. Compute the inverse of the 3x3 matrix in part (b).  
 
-I used the linear algebra submodule of NumPy for this.
+I used the linear algebra submodule of NumPy for this instead of doing it by hand.
 $$
 \begin{bmatrix}
 \cos30^o & \sin30^o & -1.098\\
@@ -93,9 +93,11 @@ A mobile robot follows a circular trajectory of radius 2 with a center at coordi
 
 $(x-3)^2 + (y - 3)^2 = 4$
 
-(a) and (b) are on the cardinal directions, so y will just be on line with the center, or offset by 2, with a clockwise rotation in increments of $90^o$, which makes the rotation portion of the matrix all 1s and 0s.  (c) is not as clean.
+(a) and (b) are on cardinal directions, so y will just be on line with the center with a clockwise rotation in increments of $90^o$, which makes the rotation portion of the matrix all 1s and 0s.  (c) is not as clean.
 
-### a. x = 3
+For clarity, anytime there are numbers split as $x|y$ inside the matrices, this is a simplification of two matrices.  Either all of the left options inside that matrix are chosen, or all of the right.
+
+a. x = 3
 
 y=5 OR y=1
 $$
@@ -107,7 +109,7 @@ $$
 $$
 
 
-### b. x =1
+b. x =1
 
 y = 3
 $$
@@ -119,7 +121,7 @@ $$
 $$
 
 
-### c. x = 2
+c. x = 2
 
 $$
 (1) + (y - 3)^2 = 4\\
@@ -139,7 +141,7 @@ That will be the clockwise rotation in radians beyond the total inversion when y
 $$
 \begin{bmatrix}
 \cos(\pi + .275) & \sin(\pi + .275) & -1\\
--\sin(\pi + .275) & \cos(\pi + .275) & -(3 - 1.268)\\
+-\sin(\pi + .275) & \cos(\pi + .275) & 3-(3 - 1.268)\\
 0 & 0 & 1
 \end{bmatrix}
 \text{OR}
@@ -147,9 +149,8 @@ $$
 \cos(.275) & -\sin(.275) & -1\\
 \sin(.275) & \cos(.275) & 3+(5-4.732)\\
 0 & 0 & 1
-\end{bmatrix} 
+\end{bmatrix}
 $$
-
 
 ## Problem 4
 
@@ -160,9 +161,7 @@ inches. He desires to traverse a $60^o$ arc in 4 seconds. Show all necessary wor
 ### a) What must the forward and angular velocities of the robot be to achieve his goal?  
 
 Arc length to traverse = $\frac{\pi}{3}30 = 10\pi$ inches at center of robot.
-
 Outside(right) arc = $\frac{\pi}{3}33 = 11\pi$ inches.
-
 Inside(left) arc = $\frac{\pi}{3}27 = 9\pi$ inches.
 $$
 \phi = \frac{A_r - A_l}{6} \\
