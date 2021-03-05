@@ -11,7 +11,7 @@ def twoDimTransform(deg, coord):
 
 def pointInBaseFrame(trans, point):
     rebasedPoint = np.matmul(trans, [[point[0]], [point[1]], [1]])
-    for coord in rebasedPoint[:-1]:
+    for coord in rebasedPoint:
         print(coord)
 
 def pointInRobotFrame(trans, point):
@@ -21,12 +21,12 @@ def pointInRobotFrame(trans, point):
     
 def solve():
     print("Problem 2:")
-    M = twoDimTransform(30, (3, -3))
+    M = twoDimTransform(270, (-3, 1))
     for row in M:
         print(row)
     print()
 
-    pointInBaseFrame(M, (3, -2))
+    pointInBaseFrame(M, (-4, -5))
     print()
 
-    pointInRobotFrame(M, (7, -1))
+    pointInRobotFrame(M, (-2, 2))
